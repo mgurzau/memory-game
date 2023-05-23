@@ -1,2 +1,3 @@
 # memory-game
-Click the boxes in the correct order.
+My first personal project in JavaScript.
+How to play: select a level, start New Game, click the boxes in the correct order.

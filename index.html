@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <title>Memory Game</title>
+
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="left-side">
+      <h1>Memory Game</h1>
+      <div class="level-bar">
+        <input
+          type="range"
+          min="1"
+          max="10"
+          value="5"
+          class="slider"
+          id="level-select"
+        />
+        <p id="level-display"></p>
+      </div>
+      <button class="start">NEW GAME</button>
+    </div>
+    <div class="win hidden">
+      <button class="close-win">&times;</button>
+      <h2>You won! 🏆</h2>
+    </div>
+    <div class="overlay-win hidden"></div>
+    <div class="lose hidden">
+      <button class="close-lose">&times;</button>
+      <h2>You lost... 💥</h2>
+    </div>
+    <div class="overlay-lose hidden"></div>
+
+    <div id="squares">
+      <button class="sq" id="sq1"></button>
+      <button class="sq" id="sq2"></button>
+      <button class="sq" id="sq3"></button>
+      <button class="sq" id="sq4"></button>
+      <button class="sq" id="sq5"></button>
+      <button class="sq" id="sq6"></button>
+      <button class="sq" id="sq7"></button>
+      <button class="sq" id="sq8"></button>
+      <button class="sq" id="sq9"></button>
+      <button class="sq" id="sq10"></button>
+      <button class="sq" id="sq11"></button>
+      <button class="sq" id="sq12"></button>
+      <button class="sq" id="sq13"></button>
+      <button class="sq" id="sq14"></button>
+      <button class="sq" id="sq15"></button>
+      <button class="sq" id="sq16"></button>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

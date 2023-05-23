@@ -1,0 +1,348 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial;
+  background: #ebe7e7;
+}
+
+h1 {
+  font-family: "Courier New", sans-serif;
+  color: rgba(61, 14, 14, 0.781);
+}
+h2 {
+  font-family: "Courier New", sans-serif;
+  color: rgba(61, 14, 14, 0.781);
+  margin: auto;
+}
+/* The slider itself */
+.slider {
+  -webkit-appearance: none; /* Override default CSS styles */
+  appearance: none;
+  width: 40vw; /* Full-width */
+  height: 10px; /* Specified height */
+  border-radius: 10px;
+  background: #c1c5c5; /* Grey background */
+  outline: none; /* Remove outline */
+  opacity: 0.8; /* Set transparency (for mouse-over effects on hover) */
+  -webkit-transition: 0.2s; /* 0.2 seconds transition on hover */
+  transition: opacity 0.2s;
+  transform: translate(-50%, -50%);
+  position: fixed;
+}
+
+/* Mouse-over effects */
+.slider:hover {
+  opacity: 1; /* Fully shown on mouse-over */
+}
+
+/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Override default look */
+  appearance: none;
+  width: 25px; /* Set a specific slider handle width */
+  height: 25px; /* Slider handle height */
+  border-radius: 50%;
+  background: rgba(99, 156, 156, 0.596); /* Green background */
+  cursor: pointer; /* Cursor on hover */
+}
+
+.slider::-moz-range-thumb {
+  width: 25px; /* Set a specific slider handle width */
+  height: 25px; /* Slider handle height */
+  border-radius: 50%;
+  background: rgba(99, 156, 156, 0.596); /* Green background */
+  cursor: pointer; /* Cursor on hover */
+}
+.left-side {
+  text-align: center;
+  padding: 32px;
+  background: #e0dddd;
+  position: absolute;
+  top: 0%;
+  left: 0%;
+}
+#squares {
+  display: grid;
+  grid-column-gap: 1vw;
+  grid-row-gap: 1vw;
+  grid-template-columns: 5vw 5vw 5vw 5vw;
+  position: fixed;
+  transform: translate(-50%, -50%);
+}
+.sq {
+  background-color: #1862b8;
+  width: 5vw;
+  height: 5vw;
+  border: none;
+  opacity: 0.7;
+  border-radius: 5px;
+}
+.sq:hover {
+  opacity: 1;
+  transition: 0.4s;
+  cursor: pointer;
+}
+
+.start {
+  border: none;
+  opacity: 1;
+  border-radius: 5px;
+  background-color: rgba(99, 156, 156, 0.596);
+  font-family: "Courier New", sans-serif;
+  text-align: center;
+  color: rgba(61, 14, 14, 0.781);
+  position: fixed;
+  transform: translate(-50%, -50%);
+}
+.start:hover {
+  opacity: 1;
+  transition: 0.4s;
+  cursor: pointer;
+}
+p {
+  font-family: "Courier New", sans-serif;
+  font-size: 1.1rem;
+  text-align: center;
+  color: rgba(61, 14, 14, 0.781);
+  position: fixed;
+  transform: translate(-50%, -50%);
+}
+.close-win {
+  position: absolute;
+  color: #333;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+.close-lose {
+  position: absolute;
+  color: #333;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+.hidden {
+  display: none;
+}
+
+.win,
+.lose {
+  text-align: center;
+  position: fixed;
+  width: 40%;
+  height: 35%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 6rem;
+  border-radius: 5px;
+  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
+  z-index: 10;
+  opacity: 0.8;
+}
+
+@media (max-width: 1920px) and (min-width: 1440px) {
+  h1 {
+    font-size: 80px;
+    border-top: 80px;
+  }
+  h2 {
+    font-size: 40px;
+  }
+  .left-side {
+    width: 50vw;
+    height: 100vh;
+  }
+  #squares {
+    display: grid;
+    grid-column-gap: 1vw;
+    grid-row-gap: 1vw;
+    grid-template-columns: 5vw 5vw 5vw 5vw;
+    position: fixed;
+    top: 50%;
+    left: 75%;
+    transform: translate(-50%, -50%);
+  }
+  .slider {
+    left: 25%;
+    top: 50%;
+  }
+  p {
+    left: 25%;
+    top: 55%;
+  }
+  .win,
+  .lose {
+    top: 50%;
+    left: 75%;
+  }
+  .close-win,
+  .close-lose {
+    top: 1.2rem;
+    right: 2rem;
+    font-size: 5rem;
+  }
+  .start {
+    width: 120px;
+    height: 50px;
+    left: 25%;
+    top: 70%;
+    font-size: 1.3rem;
+  }
+}
+@media (max-width: 1440px) and (min-width: 720px) {
+  h1 {
+    font-size: 60px;
+    border-top: 40px;
+  }
+  h2 {
+    font-size: 30px;
+  }
+  .left-side {
+    width: 50vw;
+    height: 100vh;
+  }
+  #squares {
+    top: 50%;
+    left: 75%;
+  }
+  .slider {
+    left: 25%;
+    top: 50%;
+  }
+  p {
+    left: 25%;
+    top: 55%;
+  }
+  .win,
+  .lose {
+    top: 50%;
+    left: 75%;
+  }
+  .close-win,
+  .close-lose {
+    top: 1.2rem;
+    right: 2rem;
+    font-size: 5rem;
+  }
+  .start {
+    width: 120px;
+    height: 50px;
+    left: 25%;
+    top: 70%;
+    font-size: 1.2rem;
+  }
+}
+@media (max-width: 720px) and (min-width: 480px) {
+  h1 {
+    font-size: 30px;
+    border-top: 10px;
+  }
+  h2 {
+    font-size: 20px;
+  }
+  .win,
+  .lose {
+    top: 50%;
+    left: 75%;
+    width: 60%;
+    height: 35%;
+  }
+  .left-side {
+    width: 100vw;
+    height: 50vh;
+  }
+  #squares {
+    top: 75%;
+    left: 50%;
+  }
+  .slider {
+    left: 50%;
+    top: 25%;
+  }
+  p {
+    left: 50%;
+    top: 27.5%;
+  }
+  .win,
+  .lose {
+    top: 75%;
+    left: 50%;
+  }
+  .close-win,
+  .close-lose {
+    top: 0.8rem;
+    right: 1.5rem;
+    font-size: 2rem;
+  }
+  .start {
+    width: 100px;
+    height: 35px;
+    left: 50%;
+    top: 40%;
+    font-size: 1rem;
+  }
+}
+@media (max-width: 480px) and (min-width: 320px) {
+  h1 {
+    font-size: 25px;
+    border-top: 25px;
+  }
+  h2 {
+    font-size: 15px;
+  }
+
+  .left-side {
+    width: 100vw;
+    height: 50vh;
+  }
+
+  #squares {
+    display: grid;
+    grid-column-gap: 2vw;
+    grid-row-gap: 2vw;
+    grid-template-columns: 10vw 10vw 10vw 10vw;
+    position: fixed;
+    transform: translate(-50%, -50%);
+    top: 75%;
+    left: 50%;
+  }
+  .sq {
+    background-color: #1862b8;
+    width: 10vw;
+    height: 10vw;
+    border: none;
+    opacity: 0.7;
+    border-radius: 5px;
+  }
+  .slider {
+    left: 50%;
+    top: 20%;
+  }
+  p {
+    left: 50%;
+    top: 25%;
+  }
+  .win,
+  .lose {
+    top: 50%;
+    left: 50%;
+    width: 60%;
+    height: 35%;
+  }
+  .close-win,
+  .close-lose {
+    top: 0.8rem;
+    right: 1.5rem;
+    font-size: 2rem;
+  }
+  .start {
+    width: 100px;
+    height: 50px;
+    left: 50%;
+    top: 40%;
+    font-size: 1rem;
+  }
+}
